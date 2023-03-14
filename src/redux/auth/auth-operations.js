@@ -9,8 +9,9 @@ export const signup = createAsyncThunk(
             const result = await api.signup(data);
             return result;
         }
-        catch({response}) {
-            return rejectWithValue(response => alert(`Please, specify your data.`));
+        catch(e) {
+            alert(`Please, specify your data.`);
+            return rejectWithValue(e.message);
         }
     }
 )
@@ -22,8 +23,9 @@ export const login = createAsyncThunk(
             const result = await api.login(data);
             return result;
         }
-        catch({response}) {
-            return rejectWithValue(response => alert(`Please, specify your data.`));
+        catch(e) {
+            alert(`Please, specify your data.`);
+            return rejectWithValue(e.message);
         }
     }
 )
