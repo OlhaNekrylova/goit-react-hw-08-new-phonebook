@@ -10,7 +10,7 @@ export const signup = createAsyncThunk(
             return result;
         }
         catch({response}) {
-            return rejectWithValue(response);
+            return rejectWithValue(response => alert(`Please, specify your data.`));
         }
     }
 )
@@ -23,7 +23,7 @@ export const login = createAsyncThunk(
             return result;
         }
         catch({response}) {
-            return rejectWithValue(response);
+            return rejectWithValue(response => alert(`Please, specify your data.`));
         }
     }
 )
